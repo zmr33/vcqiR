@@ -67,7 +67,7 @@ DESC_02_03DV <- function(VCP = "DESC_02_03DV"){
           llist <- llist[-na]
         }
       }
-
+    }
     if (!is.null(attr(var, "labels"))){
       original_var_labelled <- TRUE
     } else {
@@ -245,5 +245,5 @@ DESC_02_03DV <- function(VCP = "DESC_02_03DV"){
 
   vcqi_log_comment(VCP, 5, "Flow", "Exiting")
 
-  }
+
 }
