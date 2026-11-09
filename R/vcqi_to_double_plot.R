@@ -513,7 +513,9 @@ vcqi_to_double_plot <- function(
     } #end of nrow l loop
 
     baseplot <- baseplot +
-      geom_col(width = 1,fill = combined$fillcolor,color = combined$outlinecolor,size = 0.3) +
+      #changed geom_col() to width = 0.85 to allow a little gap between bars 
+      #change by zmr - 11/9/26
+      geom_col(width = 0.85 ,fill = combined$fillcolor,color = combined$outlinecolor,size = 0.3) +
       geom_linerange(aes(ymin = cill * 100, ymax = ciul * 100),
                      position = position_dodge(.9)) +
       geom_text(aes(x = rowid,y = 100 + extraspace,label = text),size = 3.25,colour = "black",family = "sans") +

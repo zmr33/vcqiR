@@ -420,7 +420,9 @@ vcqi_to_plot <- function(
     theme.size = (19/5) * geom.text.size
 
     baseplot <- baseplot +
-      geom_col(width = 1, fill = dat$bar_fillcolor1_r, color = dat$outlinecolor1_r, size = 0.3) +
+      #changed geom_col() to width = 0.85 to allow a little gap between bars 
+      #change by zmr - 11/9/26
+      geom_col(width = 0.85, fill = dat$bar_fillcolor1_r, color = dat$outlinecolor1_r, size = 0.3) +
       geom_errorbar(aes(ymin = cill * 100, ymax = ciul * 100), colour = "gray35", width = .2, position = position_dodge(.9)) +
       geom_text(aes( x = rowid, y = 105, label = text), colour = "black", family = "sans",  size=geom.text.size, hjust = 0) +
       coord_flip() +

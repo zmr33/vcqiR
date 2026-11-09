@@ -309,7 +309,9 @@ vcqi_to_uwplot <- function(
     } #end of nrow l loop
 
     baseplot <- baseplot +
-      geom_col(width = 1,fill = dat$bar_fillcolor1_r,color = dat$outlinecolor1_r,size = 0.3) +
+      #changed geom_col() to width = 0.85 to allow a little gap between bars 
+      #change by zmr - 11/9/26
+      geom_col(width = 0.85,fill = dat$bar_fillcolor1_r,color = dat$outlinecolor1_r,size = 0.3) +
       geom_text(aes(x = rowid,y = 100 + 1.25 * extraspace,label = text),colour = "black",family = "sans") +
       coord_flip() +
       labs(y = language_string(language_use = language_use, str = "OS_68"), #Sample Proportion %
